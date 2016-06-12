@@ -1,0 +1,25 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+
+
+
+#splashscreen {
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    width:100%;
+    background-color:black;
+}
+
+
+#splashimg{
+    -webkit-filter: invert(1);
+   filter: invert(1);
+}
+
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    
+}
