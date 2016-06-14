@@ -1,25 +1,218 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans);
 
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box; }
+
+img {
+  max-width: 100%;
+  height: auto;
+  width: auto\9;
+  /* ie8 */ }
 
 
+.cf:before,
+.cf:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */ }
 
-#splashscreen {
-    position:absolute;
-    top:0;
-    left:0;
-    bottom:0;
-    width:100%;
-    background-color:black;
+.cf:after {
+  clear: both; }
+
+.cf {
+  *zoom: 1; }
+hr {
+	border: none;
+	border-bottom: 3px solid #f7f7f7;
+}
+
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+ 
+.fade-in {
+    opacity:0;
+    -webkit-animation:fadeIn ease-in 1; 
+    -moz-animation:fadeIn ease-in 1;
+    animation:fadeIn ease-in 1;
+ 
+    -webkit-animation-fill-mode:forwards;  
+    -moz-animation-fill-mode:forwards;
+    animation-fill-mode:forwards;
+ 
+    -webkit-animation-duration:0.3s;
+    -moz-animation-duration:0.3s;
+    animation-duration:0.3s;
+    
+
+    -webkit-animation-delay: 0.5s;
+	-moz-animation-delay: 0.5s;
+	animation-delay: 0.5s;
+
+}
+
+.splash {
+	background: url('img/golden-gate-bridge-1081782_1920.jpg') center center;
+    -webkit-filter: grayscale(100%);
+     filter: gray;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	min-height: 360px;
+	z-index: 999;
+	background-size: cover;
+	background-attachment: fixed;
+	text-align: center;
+}
+
+.splash-title {
+	color: #d8d3d3;
+	font-size: 3em;
+	margin-top: 100px;
+	text-shadow: 0 2px 10px #000;
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	animation-delay: 1s;
+}
+
+a.splash-arrow {
+	color: white;
+	font-size: 1.2em;
+	position: absolute;
+	bottom: 55px;
+	left: 50%;
+	margin-left: -25px;
+	padding: 10px;
+	width: 50px;
+	height: 50px;
+	font-weight: bold;
+	-webkit-transition: all 0.1s ease;
+	-moz-transition: all 0.1s ease;
+	-o-transition: all 0.1s ease;
+	transition: all 0.1s ease;
+	-webkit-animation-delay: 1.5s;
+	-moz-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+	border: 3px solid white;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+}
+
+a.splash-arrow:hover {
+	text-decoration: none;
+	bottom: 50px;
 }
 
 
-#splashimg{
+@media all and (max-width: 690px) {
+  header h1 { width: 100%; text-align: center; }
+  header nav { float: none; display: inline-block; margin: 0 auto; }
+  .splash-title {font-size: 2em;}
+}
+
+@media all and (max-width: 480px) {
+	.splash-title {font-size: 1.5em;}
+}
+
+
+
+
+
+
+/* This is a single-line comment */
+/* .class */
+/* #id */
+/* p.center is modiflyer */
+html{width: 100%; height: 100%;}
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media screen and (max-width: 960px)
+.logo {
+    top: px;
+    left: 8px;
+    margin-left: 20px;
+}
+.header {
+    text-align: center;
+    width: 1200px;
+    max-height: 80px;
+    padding-top: -20px;
+    background: #fff;
+}
+/* ==========================================================================
+#Header
+========================================================================== */
+.header { width: auto; height: 40px; padding-top: -10px; background: #fff; box-sizing: border-box; }
+
+.nav { float: center; }
+.nav li { display: inline-block; vertical-align: top; }
+.nav li + li { padding-left: 230px; }
+.nav a { font-size: 15px; color: #666; font-weight: 600; }
+.nav .current-menu-item a { text-decoration: underline; }
+
+
+#invert{
     -webkit-filter: invert(1);
    filter: invert(1);
 }
+.grayscale {-webkit-filter: grayscale(100%);filter: grayscale(100%);}
+.grayscale:hover {-webkit-filter: grayscale(0%);filter: grayscale(0%);}
+.spacing400{margin-bottom: 400px;}
+.spacing300{margin-bottom: 300px;}
+.spacing250{margin-bottom: 250px;}
+.spacing200{margin-bottom: 200px;}
+.spacing150{margin-bottom: 150px;}
+.spacing100{margin-bottom: 100px;}
+.spacing40{margin-bottom: 40px;}
+.spacing20{margin-bottom: 20px;}
+.line {
+	border-bottom: 2px solid #363535;
+	margin-bottom: 20px;
+}
+
+#blk1{
+    text-align: center;
+}
+#h {
+	background: url(img/258H.jpg) no-repeat center top;
+	padding-top: 100px;
+	padding-bottom: 0px;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 700px;
+	width: 100%;
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+}
 
 
-body{
-    font-family: 'Montserrat', sans-serif;
-    
+
+#blk2{
+    background-color: white;
+    text-align: center;
+}
+#blk3{
+    background-color: white;
+    text-align: center;
+}
+#blk4{
+    background-color: white;
+    text-align: center;
 }
