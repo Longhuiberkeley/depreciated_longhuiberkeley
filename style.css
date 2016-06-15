@@ -11,6 +11,34 @@ img {
   width: auto\9;
   /* ie8 */ }
 
+img.bottom{
+    vertical-align: text-bottom;
+}
+
+p{font-size: 16px}
+
+/* For desktop: */
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    [class*="col-"] {
+        width: 100%;
+    }
+    img{max-width=60%; height: auto;}
+}
+
 
 .cf:before,
 .cf:after {
@@ -57,7 +85,7 @@ hr {
 .splash {
 	background: url('img/golden-gate-bridge-1081782_1920.jpg') center center;
     -webkit-filter: grayscale(100%);
-     filter: gray;
+    filter: gray;
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -110,53 +138,55 @@ a.splash-arrow:hover {
 }
 
 
-@media all and (max-width: 690px) {
-  header h1 { width: 100%; text-align: center; }
-  header nav { float: none; display: inline-block; margin: 0 auto; }
-  .splash-title {font-size: 2em;}
-}
-
-@media all and (max-width: 480px) {
-	.splash-title {font-size: 1.5em;}
-}
-
-
-
-
-
 
 /* This is a single-line comment */
 /* .class */
 /* #id */
 /* p.center is modiflyer */
-html{width: 100%; height: 100%;}
 body{
     font-family: 'Montserrat', sans-serif;
 }
+       
+    
 
-@media screen and (max-width: 960px)
-.logo {
-    top: px;
-    left: 8px;
-    margin-left: 20px;
+
+#footer {
+   position:fixed;
+   left: 0px;
+   bottom:0px;
+   height:100px;
+   width:100%;
+   color: white;
+   background: #1f1e1e;
 }
-.header {
-    text-align: center;
-    width: 1200px;
-    max-height: 80px;
-    padding-top: -20px;
-    background: #fff;
+
+/* IE 6 */
+* html #footer {
+   position:absolute;
+   top:expression((0-(footer.offsetHeight)+(document.documentElement.clientHeight ? document.documentElement.clientHeight : document.body.clientHeight)+(ignoreMe = document.documentElement.scrollTop ? document.documentElement.scrollTop : document.body.scrollTop))+'px');
 }
+
+
+.shell { width: 1170px; margin: 0 auto; }
+.content { float: left; width: 870px; }
+.content-medium { float: right; width: 700px; }
+
 /* ==========================================================================
 #Header
 ========================================================================== */
-.header { width: auto; height: 40px; padding-top: -10px; background: #fff; box-sizing: border-box; }
+.header { height: 80px; padding-top: 5px; background: #fff; box-sizing: border-box; }
 
-.nav { float: center; }
+.header-inner {float: center; margin-right: 0px; text-align: center;}
+
+/* ==========================================================================
+	#Nav
+========================================================================== */
+.nav { text-align: center; float: center;} /* float here set text-align*/
 .nav li { display: inline-block; vertical-align: top; }
-.nav li + li { padding-left: 230px; }
-.nav a { font-size: 15px; color: #666; font-weight: 600; }
+.nav li + li { padding-left: 20px;}
+.nav a { font-size: 20px; color: #fffbfb; font-weight: 600; }
 .nav .current-menu-item a { text-decoration: underline; }
+
 
 
 #invert{
@@ -169,6 +199,7 @@ body{
 .spacing300{margin-bottom: 300px;}
 .spacing250{margin-bottom: 250px;}
 .spacing200{margin-bottom: 200px;}
+.spacing180{margin-bottom: 180px;}
 .spacing150{margin-bottom: 150px;}
 .spacing100{margin-bottom: 100px;}
 .spacing40{margin-bottom: 40px;}
@@ -179,11 +210,49 @@ body{
 }
 
 #blk1{
-    text-align: center;
 }
-#h {
+#building {
 	background: url(img/258H.jpg) no-repeat center top;
-	padding-top: 100px;
+    -webkit-filter: grayscale(100%);
+    filter: gray;
+	padding-top: 200px;
+	padding-bottom: 0px;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 700px;
+	width: 100%;
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+}
+
+#profile{   
+}
+.profilecirc{
+    -moz-border-radius: 30%;
+	-webkit-border-radius: 30%;
+	border-radius: 30%;
+    width: 70%;
+    height: auto;
+      ;
+}
+
+#blk2{
+    background-color: white;
+}
+#lib {
+	background: url(img/berkeleylib.jpg) no-repeat center top;
+    -webkit-filter: grayscale(100%);
+    filter: gray;
+	padding-top: 200px;
 	padding-bottom: 0px;
 	background-attachment: relative;
 	background-position: center center;
@@ -203,11 +272,6 @@ body{
 }
 
 
-
-#blk2{
-    background-color: white;
-    text-align: center;
-}
 #blk3{
     background-color: white;
     text-align: center;
@@ -215,4 +279,34 @@ body{
 #blk4{
     background-color: white;
     text-align: center;
+}
+#sky {
+	background: url(img/286H.jpg) no-repeat center top;
+    -webkit-filter: grayscale(100%);
+    filter: gray;
+	padding-top: 200px;
+	padding-bottom: 0px;
+	background-attachment: relative;
+	background-position: center center;
+	min-height: 700px;
+	width: 100%;
+
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    color: white;
+    vertical-align: bottom;
+}
+
+.fa{color: white;}
+
+#map {
+    width: 100%;
+    max-height: 500px;
 }

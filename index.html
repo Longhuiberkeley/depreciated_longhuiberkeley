@@ -37,62 +37,79 @@
     <img  src="img/huilong_transp.png" align="center">
     <a href="#" class="splash-arrow fade-in"><img src="img/down-arrow.png" alt="" /></a>
     </div>    
+    
+        			
 
-<div class="wrapper"></div>
-<header class="header">
-        <a href="#blk1"><img src="img/hui_sm.png" style="max-width:100px; height: auto; margin-top: -10px;"></a>
-        
-
-        <div class="header-inner">
-            <nav class="nav">
-                <ul id="menu-main-menu" class="menu">
-                    <li><a href="#blk1">About </a></li>
-                    <li><a href="#blk2">Experience</a></li>
-                    <li><a href="#blk3">Resume/CV</a></li>
-                    <li><a href="#blk4">Contact</a></li>
-                
-                
-                </ul>
-            </nav>				
-
-
-        </div><!-- /.header-inner -->
-</header><!-- /.header -->
       
     
     
     
-    
-    
-<section id="#blk1">
-    <div class="spacing100"></div>
-    <div class="container" id="h">
+<section id="blk1">
+    <div class="row">
+    <div class="container" id="building">
+    <div class="col-md-4 col-md-offset-1 col-xs-12" style="text-align: right;"> 
     <h1>About</h1>
-    <p>I am born and raised in Hong Kong. Then when I turned 16, I moved to Edmonds, Washington and studied at Edmonds Community College. I studied many different disciplines there, such as economics, physics, accounting and business. I worked as a math tutor at TRiO. <br/>
-    After 2 years at EdCC, I transferred to UC Berkeley. I then completed a Ph.D. level math/ statistics course Probability Theory and have completed my B.A. at the age of 19. I am currently a teacher for Sylvan Learning Inc. <br/>
-    My professional experience mainly involved teaching. My students are low-income, first generation college students and students with disabilities valuable support and services<br/>
-    I am particularly interested in mathematical finance, computer science and statistics (and many different things).<br/>
+    <p>I am born and raised in Hong Kong. Then when I turned 16, I moved to Edmonds, Washington and studied at Edmonds Community College. I studied many different disciplines there, such as economics, physics, accounting and business. I worked as a math tutor at TRiO. <br/><br/>
+    After 2 years at EdCC, I transferred to UC Berkeley. I then completed a Ph.D. level math/ statistics course Probability Theory and have completed my B.A. at the age of 19. I am currently a teacher for Sylvan Learning Inc. <br/><br/>
+    My professional experience mainly involved teaching. My students are low-income, first generation college students and students with disabilities valuable support and services<br/><br/>
+    I am particularly interested in mathematical finance, computer science and statistics (and many different things).<br/><br/>
     Things I like to do: Traveling, playing music (guitar on both electric and acoustic, and drum), learning new things, exercising, cooking & baking, etc. (Last update on March 14, 2016)</p>
     </div>
-    
+    <div class="col-md-2 col-md-offset-1 col-xs-12">
+        <img src="img/5657_192671044223314_751998221_n.jpg" class="img-circle" height="auto">
+        </div>
+    </div>
+    </div>
 </section>
     
     
-<section id="#blk2">
+<section id="blk2">
+    <div class="row" style="text-align: right;">
+        </div>
     
     </section>
     
     
     
-<section id="#blk3">
+<section id="blk3">
 
     </section>
     
-<section id="#blk4">
+<section id="blk4">
     
+    <div class="container-fluid" id="sky">
+    <div class="row">    
+    <h1 style="text-align: center;">Contact</h1>         
+    </div>
+    </div>
+</section>
+    
+<!--- to fix Social links, add another section here or maps. Use margin to fix   -->     
+
+<section style="color:white;">
+    
+    <div class="row" style="margin-top: -20px;">     
+    <div class="col-md-4 col-md-offset-1">
+      <h4>Welcome to contact me for any question</h4>
+      <a href="mailto:kd512d7@gmail.com" class="btn btn-default btn-lg"><i class="fa fa-envelope" aria-hidden="true"></i>kd512d7@gmail.com</a>
+        </div>
+
+    <div class="col-md-2">
+        <h3 style="text-align:left;">Currently in Berkeley,</br> California</h3>
+        </div>
+    
+      <div class="col-md-3" style="text-align:right;">
+		 			<h2>Social Links</h2>
+		 			<div class="hline-w"></div>
+		 			<h3>
+		 				<a href="https://www.facebook.com/long.hui2"><i class="fa fa-facebook"></i></a>
+		 				<a href="https://www.instagram.com/kd512d7/"><i class="fa fa-instagram"></i></a>
+                        <a href="https://github.com/Longhuiberkeley"><i class="fa fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/long-hui-559139a1?trk=hp-identity-name"><i class="fa fa-linkedin"></i></a>
+		 			</h3>
+		 		</div>
+    </div>
     </section>
-
-
 
 
 <section>
@@ -100,6 +117,26 @@
      <script src="https://maps.googleapis.com/maps/api/js"
          async defer></script>
 </section>
+    
+    
+<section id="footer">
+    
+    <a href="#blk1"><img src="img/hui_sm.png" style="max-width:100px; height: auto; margin-top:0px; position: fixed;"></a>
+        <div class="header-inner">
+            <nav class="nav">
+                <ul class="menu">
+                    <li><a href="#blk1">About </a></li>
+                    <li><a href="#blk2">Experience</a></li>
+                    <li><a href="#blk3">Resume/CV</a></li>
+                    <li><a href="#blk4">Contact</a></li>
+                    <li><a href="https://docs.google.com/document/d/1fcfGbi7k-ac2X3ehDqpBgTbn7lubjwcghcyyg86nxZU/edit?usp=sharing">Resume.pdf</a></li>
+                </ul>
+            </nav>				
+
+    </div>
+
+</section>
+<!--- DON'T FUCKING TOUCH THE FOOTER/HEADER -->
 
 
 </body>    
@@ -125,6 +162,13 @@ $(window).scroll(function() {
     });
 });
 </script>
+
+    
+<script>
+    $('.pull-down').each(function() {
+  var $this=$(this);
+	$this.css('margin-top', $this.parent().height()-$this.height())
+});</script>
     
 <script type="text/javascript">
             // When the window has finished loading create our google map below
