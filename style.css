@@ -83,9 +83,7 @@ hr {
 }
 
 .splash {
-	background: url('img/golden-gate-bridge-1081782_1920.jpg') center center;
-    -webkit-filter: grayscale(100%);
-    filter: gray;
+	background: url('img/golden-gate-bridge-1081782_1920-min.jpg') center center;
 	position: fixed;
 	top: 0;
 	right: 0;
@@ -138,6 +136,12 @@ a.splash-arrow:hover {
 }
 
 
+html, body, 
+.container,
+.cbp-fbscroller,
+.cbp-fbscroller section { 
+	height: 100%; 
+}
 
 /* This is a single-line comment */
 /* .class */
@@ -171,21 +175,65 @@ body{
 .content { float: left; width: 870px; }
 .content-medium { float: right; width: 700px; }
 
-/* ==========================================================================
-#Header
-========================================================================== */
 .header { height: 80px; padding-top: 5px; background: #fff; box-sizing: border-box; }
 
 .header-inner {float: center; margin-right: 0px; text-align: center;}
 
-/* ==========================================================================
-	#Nav
-========================================================================== */
 .nav { text-align: center; float: center;} /* float here set text-align*/
 .nav li { display: inline-block; vertical-align: top; }
 .nav li + li { padding-left: 20px;}
 .nav a { font-size: 20px; color: #fffbfb; font-weight: 600; }
 .nav .current-menu-item a { text-decoration: underline; }
+
+
+.cbp-fbscroller > nav {
+	position: fixed;
+	z-index: 9999;
+	right: 100px;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+.cbp-fbscroller > nav a {
+	display: block;
+	position: relative;
+	color: transparent;
+	height: 50px;
+}
+
+.cbp-fbscroller > nav a:after {
+	content: '';
+	position: absolute;
+	width: 24px;
+	height: 24px;
+	border-radius: 50%;
+	border: 4px solid #fff;
+}
+
+.cbp-fbscroller > nav a:hover:after{
+	background: rgba(255,255,255,0.6);
+}
+
+.cbp-fbscroller > nav a.cbp-fbcurrent:after {
+	background: #fff;
+}
+
+/* background-attachment does the trick */
+.cbp-fbscroller section {
+	position: relative;
+	background-position: top center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
+}
+
+
+
+
+
 
 
 
@@ -195,11 +243,11 @@ body{
 }
 .grayscale {-webkit-filter: grayscale(100%);filter: grayscale(100%);}
 .grayscale:hover {-webkit-filter: grayscale(0%);filter: grayscale(0%);}
+
 .spacing400{margin-bottom: 400px;}
 .spacing300{margin-bottom: 300px;}
 .spacing250{margin-bottom: 250px;}
 .spacing200{margin-bottom: 200px;}
-.spacing180{margin-bottom: 180px;}
 .spacing150{margin-bottom: 150px;}
 .spacing100{margin-bottom: 100px;}
 .spacing40{margin-bottom: 40px;}
@@ -209,12 +257,12 @@ body{
 	margin-bottom: 20px;
 }
 
+#section1{}
+
 #blk1{
 }
 #building {
-	background: url(img/258H.jpg) no-repeat center top;
-    -webkit-filter: grayscale(100%);
-    filter: gray;
+	background: url(img/258H-min.jpg) no-repeat center top;
 	padding-top: 200px;
 	padding-bottom: 0px;
 	background-attachment: relative;
@@ -232,6 +280,7 @@ body{
     -o-background-size: cover;
     background-size: cover;
     color: white;
+    position: fixed;
 }
 
 #profile{   
@@ -242,16 +291,15 @@ body{
 	border-radius: 30%;
     width: 70%;
     height: auto;
-      ;
 }
 
 #blk2{
-    background-color: white;
+    background-color: gray;
+    height: auto;
+    min-height: 500px;
 }
 #lib {
 	background: url(img/berkeleylib.jpg) no-repeat center top;
-    -webkit-filter: grayscale(100%);
-    filter: gray;
 	padding-top: 200px;
 	padding-bottom: 0px;
 	background-attachment: relative;
@@ -275,15 +323,16 @@ body{
 #blk3{
     background-color: white;
     text-align: center;
+    background-color: gray;
+    height: auto;
+    min-height: 500px;
 }
 #blk4{
     background-color: white;
     text-align: center;
 }
 #sky {
-	background: url(img/286H.jpg) no-repeat center top;
-    -webkit-filter: grayscale(100%);
-    filter: gray;
+	background: url(img/286H-min.jpg) no-repeat center top;
 	padding-top: 200px;
 	padding-bottom: 0px;
 	background-attachment: relative;
@@ -302,11 +351,16 @@ body{
     background-size: cover;
     color: white;
     vertical-align: bottom;
+    position: fixed;
+    
 }
-
+#shipUp{
+    margin-top: -10em;
+    background-color: black;
+}
 .fa{color: white;}
 
 #map {
     width: 100%;
-    max-height: 500px;
+    min-height: 600px;
 }

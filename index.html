@@ -21,11 +21,13 @@
             
       <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
       <script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+      <script src="cbpFixedScrollLayout.min.js"></script>
       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
       <link rel="stylesheet" href="style.css">
       </head>
-      <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-      <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdDzmvMes23vwncmMauhddFKdl5kBjAFE&sensor=false"></script>
+      <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdDzmvMes23vwncmMauhddFKdl5kBjAFE&sensor=false"></script>
+
     
 
     
@@ -43,10 +45,9 @@
       
     
     
-    
+<div class="container" id="building">
 <section id="blk1">
     <div class="row">
-    <div class="container" id="building">
     <div class="col-md-4 col-md-offset-1 col-xs-12" style="text-align: right;"> 
     <h1>About</h1>
     <p>I am born and raised in Hong Kong. Then when I turned 16, I moved to Edmonds, Washington and studied at Edmonds Community College. I studied many different disciplines there, such as economics, physics, accounting and business. I worked as a math tutor at TRiO. <br/><br/>
@@ -59,15 +60,16 @@
         <img src="img/5657_192671044223314_751998221_n.jpg" class="img-circle" height="auto">
         </div>
     </div>
-    </div>
 </section>
     
     
 <section id="blk2">
     <div class="row" style="text-align: right;">
+        <p>jfiadsfnsajfosafjodsaifjdos</p>
         </div>
     
     </section>
+    </div>
     
     
     
@@ -87,35 +89,32 @@
 <!--- to fix Social links, add another section here or maps. Use margin to fix   -->     
 
 <section style="color:white;">
-    
-    <div class="row" style="margin-top: -20px;">     
+    <div class="row" id="shipUp">
     <div class="col-md-4 col-md-offset-1">
       <h4>Welcome to contact me for any question</h4>
       <a href="mailto:kd512d7@gmail.com" class="btn btn-default btn-lg"><i class="fa fa-envelope" aria-hidden="true"></i>kd512d7@gmail.com</a>
         </div>
-
     <div class="col-md-2">
-        <h3 style="text-align:left;">Currently in Berkeley,</br> California</h3>
+        <h3>Currently in Berkeley, California</h3>
         </div>
-    
-      <div class="col-md-3" style="text-align:right;">
+    <div class="col-md-3 col-md-offset-2">
 		 			<h2>Social Links</h2>
 		 			<div class="hline-w"></div>
 		 			<h3>
 		 				<a href="https://www.facebook.com/long.hui2"><i class="fa fa-facebook"></i></a>
 		 				<a href="https://www.instagram.com/kd512d7/"><i class="fa fa-instagram"></i></a>
-                        <a href="https://github.com/Longhuiberkeley"><i class="fa fa-github"></i></a>
+                        <a href="https://github.com/Longhuiberkeley#000000"><i class="fa fa-github"></i></a>
                         <a href="https://www.linkedin.com/in/long-hui-559139a1?trk=hp-identity-name"><i class="fa fa-linkedin"></i></a>
 		 			</h3>
 		 		</div>
     </div>
-    </section>
+</section>
 
 
 <section>
-          <div id="map"></div>
-     <script src="https://maps.googleapis.com/maps/api/js"
-         async defer></script>
+    <div id="map"></div>
+     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD2E6iTvejSy-6T9NyrBrUGvhqFM7Av9nQ&callback=initMap"
+  type="text/javascript"></script>
 </section>
     
     
@@ -132,7 +131,6 @@
                     <li><a href="https://docs.google.com/document/d/1fcfGbi7k-ac2X3ehDqpBgTbn7lubjwcghcyyg86nxZU/edit?usp=sharing">Resume.pdf</a></li>
                 </ul>
             </nav>				
-
     </div>
 
 </section>
@@ -142,16 +140,16 @@
 </body>    
     
 <script>
-    $(document).ready(function() {
-    if($(".splash").is(":visible")) {
-        $(".wrapper").css({"opacity":"0"});
-    }
+$(document).ready(function() {
+if($(".splash").is(":visible")) {
+    $(".wrapper").css({"opacity":"0"});
+}
 
-    $(".splash-arrow").click(function() {
-        $(".splash").slideUp("800", function() {
-            $(".wrapper").delay(100).animate({"opacity":"1.0"},800);
-        });
+$(".splash-arrow").click(function() {
+    $(".splash").slideUp("800", function() {
+        $(".wrapper").delay(100).animate({"opacity":"1.0"},800);
     });
+});
 });
 
 $(window).scroll(function() {
@@ -162,35 +160,336 @@ $(window).scroll(function() {
     });
 });
 </script>
-
-    
-<script>
-    $('.pull-down').each(function() {
-  var $this=$(this);
-	$this.css('margin-top', $this.parent().height()-$this.height())
-});</script>
-    
 <script type="text/javascript">
             // When the window has finished loading create our google map below
             google.maps.event.addDomListener(window, 'load', init);
-        
+
             function init() {
                 // Basic options for a simple Google Map
                 // For more options see: https://developers.google.com/maps/documentation/javascript/reference#MapOptions
                 var mapOptions = {
                     // How zoomed in you want the map to start at (always required)
-                    zoom: 6,
+                    zoom: 15,
 
                     // The latitude and longitude to center the map (always required)
-                    center: new google.maps.LatLng(29.555573, 34.953230), // New York
+                    center: new google.maps.LatLng(37.873881, -122.257789), // New York
 
-                    // How you would like to style the map. 
+                    // How you would like to style the map.
                     // This is where you would paste any style found on Snazzy Maps.
-                    styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"administrative.country","elementType":"labels.text","stylers":[{"visibility":"on"},{"lightness":"-35"},{"color":"#ca2a2a"},{"weight":"1.39"},{"invert_lightness":true},{"saturation":"-27"},{"gamma":"1.32"}]},{"featureType":"administrative.country","elementType":"labels.text.fill","stylers":[{"hue":"#f6ff00"}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#ff0900"},{"lightness":17}]}]
+                    styles: 
+                    
+                    [
+    {
+        "featureType": "all",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "saturation": 36
+            },
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 40
+            },
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "off"
+            },
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "all",
+        "elementType": "labels.icon",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 20
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            },
+            {
+                "weight": 1.2
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "labels",
+        "stylers": [
+            {
+                "color": "#e9d6d6"
+            },
+            {
+                "saturation": "-100"
+            },
+            {
+                "lightness": "50"
+            },
+            {
+                "gamma": "0.25"
+            },
+            {
+                "weight": "0.01"
+            },
+            {
+                "invert_lightness": true
+            },
+            {
+                "visibility": "on"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#e1dddd"
+            }
+        ]
+    },
+    {
+        "featureType": "administrative",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "saturation": "-55"
+            }
+        ]
+    },
+    {
+        "featureType": "landscape",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 20
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.natural.landcover",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "weight": "9.74"
+            },
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 21
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 17
+            },
+            {
+                "visibility": "off"
+            },
+            {
+                "invert_lightness": true
+            },
+            {
+                "weight": "10.00"
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#f1f1f1"
+            },
+            {
+                "lightness": 29
+            },
+            {
+                "weight": "1.20"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 18
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "off"
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "invert_lightness": true
+            },
+            {
+                "weight": "0.10"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "off"
+            },
+            {
+                "weight": "10.00"
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "invert_lightness": true
+            },
+            {
+                "weight": "0.01"
+            },
+            {
+                "visibility": "on"
+            },
+            {
+                "saturation": "-62"
+            },
+            {
+                "lightness": "-20"
+            },
+            {
+                "gamma": "1.00"
+            }
+        ]
+    },
+    {
+        "featureType": "transit",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#000000"
+            },
+            {
+                "lightness": 19
+            }
+        ]
+    },
+    {
+        "featureType": "water",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            },
+            {
+                "lightness": 17
+            }
+        ]
+    }
+]
                 };
 
-                // Get the HTML DOM element that will contain your map 
                 // We are using a div with id="map" seen below in the <body>
+                // Get the HTML DOM element that will contain your map
                 var mapElement = document.getElementById('map');
 
                 // Create the Google Map using our element and options defined above
@@ -198,12 +497,13 @@ $(window).scroll(function() {
 
                 // Let's also add a marker while we're at it
                 var marker = new google.maps.Marker({
-                    position: new google.maps.LatLng(29.555573, 34.953230),
+                    position: new google.maps.LatLng(37.873881, -122.257789),
                     map: map,
                     title: 'Omer xR EDSEA!'
                 });
             }
         </script>
+
     
     
 </html>
